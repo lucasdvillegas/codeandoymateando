@@ -1,0 +1,64 @@
+<!-- <h2>Login</h2>
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" [(ngModel)]="credentials.email" required>
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" [(ngModel)]="credentials.password" required>
+  </div>
+  <button type="submit">Login</button>
+</form> -->
+
+<mat-card class="card-container">
+  <!-- <mat-card-header>
+    <h2>Login</h2>
+  </mat-card-header> -->
+
+  <mat-card-content>
+    <form (ngSubmit)="onSubmit()">
+
+      <!-- <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" [(ngModel)]="credentials.email" required>
+      </div> -->
+      <div class="example-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Ingresa tu email</mat-label>
+          <input matInput placeholder="email@example.com" [(ngModel)]="credentials.email" required name="email" type="email">
+        </mat-form-field>
+      </div>
+
+
+      <!-- <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" [(ngModel)]="credentials.password" required>
+      </div> -->
+
+      <mat-form-field appearance="fill">
+        <mat-label>Ingresa tu contraseña</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" type="password" id="password" name="password" [(ngModel)]="credentials.password" required>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <button mat-raised-button type="submit">Iniciar sesión</button>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+
+
+
+
+<!--
+<div class="example-container">
+  <mat-form-field appearance="fill">
+    <mat-label>Enter your email</mat-label>
+    <input matInput placeholder="pat@example.com" [formControl]="email" required>
+    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+</div>
+ -->
